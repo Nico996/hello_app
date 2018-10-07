@@ -1,59 +1,30 @@
 package com.globant.cartService.entities;
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
-import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Transient;
+
+
+
 
 @Data
 @Entity
-public class Item implements Serializable {
+public class Item {
 
-	private static final long serialVersionUID = 1L;
+	@Id
+	private Long id;
 	
-	@Column(name = "id")
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private @Id Long id;
+/*	I do not persist those properties because I retrieve on demand from URL through ItemService
+ * */
+	@Transient
 	private String title;
+	@Transient
 	private double price;
-	
-	public long getId()
-    {
-        return id;
-    }
 
-    public void setId(long id)
-    {
-        this.id = id;
-    } 
-    
-    public String getTitle() {
-        return title;
-    }
-    
-    public void setTitle(String title) {
-        this.title = title;
-    }
-    
-    public Double getPrice() {
-        return price;
-    }
-    
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-    
-    public String toString() {
-        StringBuffer buffer = new StringBuffer();
-        buffer.append("Description: " + title + ";");
-        buffer.append("Price: " + price);
-        return buffer.toString();
-    }
+
 	
 	public Item() {
 		

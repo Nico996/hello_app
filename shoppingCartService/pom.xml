@@ -51,25 +51,18 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.38</version>
+   		 	<groupId>org.springframework.boot</groupId>
+		 	<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.hibernate.javax.persistence</groupId>
-			<artifactId>hibernate-jpa-2.0-api</artifactId>
-			<version>1.0.1.Final</version>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-entitymanager</artifactId>
-			<version>5.1.0.Final</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-orm</artifactId>
-			<version>spring-orm</version>
-		</dependency>
+	    	<groupId>org.modelmapper</groupId>
+	    	<artifactId>modelmapper</artifactId>
+	    	<version>0.7.4</version>
+		</dependency>		
 	</dependencies>
 
 	<build>
@@ -80,6 +73,8 @@
 			</plugin>
 		</plugins>
 	</build>
+	
+
 
 
 </project>
